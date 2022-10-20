@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2021 PELock LLC
  * @license Apache-2.0
  */
-namespace pelock\imgopt;
+namespace vladovinkin\imgopt;
 
 use Yii;
 use yii\base\Widget;
