@@ -27,7 +27,7 @@ it will automatically generate an extra image in new [WebP](https://developers.g
 Replace your `IMG` tag within your `HTML` templates with a call to:
 
 ```php
-<?= \PELock\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product" ]) ?>
+<?= \vladovinkin\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product" ]) ?>
 ```
 
 (Image path is relative to [Yii2 Framework @webroot alias](https://www.yiiframework.com/wiki/667/yii-2-list-of-path-aliases-available-with-default-basic-and-advanced-app))
@@ -48,7 +48,7 @@ The browser will pick up the best source for the provided image, and thanks to r
 [Lazy images loading](https://web.dev/browser-level-image-lazy-loading/) makes the browser load the images when it reach a certain point, after which the image became visible in the current browser tab. You can use this pure HTML feature (no JS involved) from within the widget:
 
 ```php
-<?= \PELock\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "loading" => "lazy" ]) ?>
+<?= \vladovinkin\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "loading" => "lazy" ]) ?>
 ```
 
 The generated output looks like this:
@@ -75,13 +75,13 @@ The preferred way to install the library is through the [composer](https://getco
 Run:
 
 ```
-php composer.phar require --prefer-dist pelock/yii2-imgopt "*"
+php composer.phar require --prefer-dist vladovinkin/yii2-imgopt "*"
 ```
 
 Or add:
 
 ```
-"pelock/yii2-imgopt": "*"
+"vladovinkin/yii2-imgopt": "*"
 ```
 
 to the`require` section within your `composer.json` config file.
@@ -107,7 +107,7 @@ If the generated WebP image is larger than the original image, the default `<img
 If for some reason you want to disable WebP file serving via the HTML `<picture>` tag, you can do it per widget settings:
 
 ```php
-<?= \PELock\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product", "disable" => true ]) ?>
+<?= \vladovinkin\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product", "disable" => true ]) ?>
 ```
 
 ## Recreate WebP file
@@ -117,7 +117,7 @@ The widget code automatically detects if there's a WebP image in the directory w
 If you wish to force the widget code to recreate it anyway, pass the special param to the widget code:
 
 ```php
-<?= \PELock\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product", "recreate" => true ]) ?>
+<?= \vladovinkin\ImgOpt\ImgOpt::widget(["src" => "/images/product/extra.png", "alt" => "Extra product", "recreate" => true ]) ?>
 ```
 
 You might want to recreate all of the WebP files and to do that without modifying, change the widget source code from:
@@ -154,7 +154,7 @@ Instead of:
 You can replace it with more compact widget code:
 
 ```php
-<?= \PELock\ImgOpt\ImgOpt::widget(["lightbox_data" => "image-1", "lightbox_src" => "/images/sunset.jpg", "src" => "/images/sunset-thumbnail.jpg", "alt" => "Sunset" ]) ?>
+<?= \vladovinkin\ImgOpt\ImgOpt::widget(["lightbox_data" => "image-1", "lightbox_src" => "/images/sunset.jpg", "src" => "/images/sunset-thumbnail.jpg", "alt" => "Sunset" ]) ?>
 ```
 
 And it will generate this HTML code:
