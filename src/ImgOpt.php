@@ -130,6 +130,12 @@ class ImgOpt extends Widget
 	public $width;
 
 	/**
+	 * @var array add extra attributes to <img> tag
+	 * example: "extra_data" => ["type" => "button", "title" => "some description text", etc..]
+	 */
+	public $extra_data = null;
+	
+	/**
 	 * @var string Lightbox attribute data-lightbox="image-1" etc. (optional)
 	 */
 	public $lightbox_data;
@@ -330,6 +336,13 @@ class ImgOpt extends Widget
 			"itemprop" => $this->itemprop
 		]);
 
+		// add extra_data tags
+		if (!is_null($this->extra_data)) {
+			foreach ($this->extra_data as $key => $data) {
+				$attr[$key] = $data;
+			}
+		}
+		
 		// was WebP image generated from our unoptimized image?
 		if ($this->_webp)
 		{
